@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Change this to wherever you extracted Tomcat
-        TOMCAT_WEBAPPS = 'C:\apache-tomcat\webapps'
+        TOMCAT_WEBAPPS = 'C:\\apache-tomcat\\webapps'
     }
 
     stages {
@@ -23,8 +23,8 @@ pipeline {
 
         stage('Deploy to Tomcat') {
             steps {
-                bat 'if not exist "%TOMCAT_WEBAPPS%\MyWebApp" mkdir "%TOMCAT_WEBAPPS%\MyWebApp"'
-                bat 'copy /Y index.html "%TOMCAT_WEBAPPS%\MyWebApp\\"'
+                bat 'if not exist "%TOMCAT_WEBAPPS%\\MyWebApp" mkdir "%TOMCAT_WEBAPPS%\\MyWebApp"'
+                bat 'copy /Y index.html "%TOMCAT_WEBAPPS%\\MyWebApp\\"'
             }
         }
     }
